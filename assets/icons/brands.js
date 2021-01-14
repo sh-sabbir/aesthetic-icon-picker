@@ -1,4 +1,4 @@
-{
+var brands = {
   "icons": [
 	"500px",
 	"accessible-icon",

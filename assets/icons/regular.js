@@ -1,4 +1,4 @@
-{
+var regular = {
   "icons": [
 	"address-book",
 	"address-card",

@@ -291,6 +291,7 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	padding: 30px 80px 0;
+	width: 75%;
 }
 @media (max-width: 1439px) {
 	#elementor-icons-manager__main {
@@ -491,6 +492,7 @@
 	transform: translate(-50%, -50%);
 	padding: 1px;
 }
+.elementor-icons-manager__tab__item__content i,
 .elementor-icons-manager__tab__item__icon {
 	font-size: 25px;
 	color: #6d7882;
@@ -511,15 +513,4 @@
     flex-shrink: 0;
     width: 25%;
     background-color: hsla(0,0%,100%,.3);
-}
-
-#elementor-icons-manager__main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 30px 80px 0;
 }

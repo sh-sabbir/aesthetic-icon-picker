@@ -1,4 +1,4 @@
-{
+var solid = {
   "icons": [
 	"ad",
 	"address-book",

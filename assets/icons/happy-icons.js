@@ -1,4 +1,4 @@
-{
+var happyIcons = {
 	"icons" : [
 		"3d-rotate",
 		"degree",
