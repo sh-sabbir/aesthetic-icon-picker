@@ -36,8 +36,8 @@
 	padding: 0 30px 30px;
 	min-height: 50px;
 }
-.dialog-type-lightbox:not(.elementor-popup-modal) .dialog-header,
-.dialog-type-lightbox:not(.elementor-popup-modal) .dialog-message {
+.dialog-type-lightbox:not(.aesthetic-popup-modal) .dialog-header,
+.dialog-type-lightbox:not(.aesthetic-popup-modal) .dialog-message {
 	text-align: center;
 }
 .dialog-type-lightbox .dialog-buttons-wrapper {
@@ -83,7 +83,7 @@
 	opacity: 0.4;
 }
 
-.elementor-templates-modal .dialog-widget-content {
+.aesthetic-templates-modal .dialog-widget-content {
 	font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
 	background-color: #f1f3f5;
     width: 100%;
@@ -92,17 +92,17 @@
     right: 0;
 }
 @media (max-width: 1439px) {
-	.elementor-templates-modal .dialog-widget-content {
+	.aesthetic-templates-modal .dialog-widget-content {
 		max-width: 990px;
 	}
 }
 @media (min-width: 1440px) {
-	.elementor-templates-modal .dialog-widget-content {
+	.aesthetic-templates-modal .dialog-widget-content {
 		max-width: 1200px;
 	}
 }
 
-.elementor-templates-modal .dialog-header {
+.aesthetic-templates-modal .dialog-header {
 	padding: 0;
 	background-color: #fff;
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -110,7 +110,7 @@
 	z-index: 1;
 }
 
-.elementor-templates-modal .dialog-buttons-wrapper {
+.aesthetic-templates-modal .dialog-buttons-wrapper {
 	background-color: #fff;
 	border: none;
 	display: none;
@@ -119,89 +119,89 @@
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 	position: relative;
 }
-.elementor-templates-modal .dialog-buttons-wrapper .elementor-button {
+.aesthetic-templates-modal .dialog-buttons-wrapper .aesthetic-button {
 	height: 40px;
 	margin-left: 5px;
 }
-.elementor-templates-modal .dialog-buttons-wrapper .elementor-button-success {
+.aesthetic-templates-modal .dialog-buttons-wrapper .aesthetic-button-success {
 	padding: 12px 36px;
 	color: #fff;
 	width: initial;
 	font-size: 15px;
 }
-.elementor-templates-modal .dialog-buttons-wrapper .elementor-button-success:hover {
+.aesthetic-templates-modal .dialog-buttons-wrapper .aesthetic-button-success:hover {
 	background-color: #39b54a;
 }
 
-.elementor-templates-modal .dialog-message {
+.aesthetic-templates-modal .dialog-message {
 	height: 750px;
 	max-height: 85vh;
 	overflow: auto;
 	padding-top: 25px;
 }
 
-.elementor-templates-modal .dialog-content {
+.aesthetic-templates-modal .dialog-content {
 	height: 100%;
 }
 
-.elementor-templates-modal .dialog-loading {
+.aesthetic-templates-modal .dialog-loading {
 	display: none;
 }
 
-.elementor-templates-modal__header {
+.aesthetic-templates-modal__header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 50px;
 }
-.elementor-templates-modal__header__logo {
+.aesthetic-templates-modal__header__logo {
 	line-height: 1;
 	text-transform: uppercase;
 	font-weight: bold;
 	cursor: pointer;
 }
-.elementor-templates-modal__header__logo-area {
+.aesthetic-templates-modal__header__logo-area {
 	text-align: left;
 	padding-left: 15px;
 }
-.elementor-templates-modal__header__logo-area > * {
+.aesthetic-templates-modal__header__logo-area > * {
 	display: flex;
 	align-items: center;
 }
-.elementor-templates-modal__header__logo__icon-wrapper {
+.aesthetic-templates-modal__header__logo__icon-wrapper {
 	margin-right: 10px;
 	font-size: 12px;
 }
-.elementor-templates-modal__header__logo__title {
+.aesthetic-templates-modal__header__logo__title {
 	padding-top: 2px;
 }
-.elementor-templates-modal__header__items-area {
+.aesthetic-templates-modal__header__items-area {
 	display: flex;
 	flex-direction: row-reverse;
 }
-.elementor-templates-modal__header__item {
+.aesthetic-templates-modal__header__item {
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	box-sizing: content-box;
 }
-.elementor-templates-modal__header__item > i {
+.aesthetic-templates-modal__header__item > i {
 	font-size: 20px;
 	transition: all 0.3s;
 	cursor: pointer;
 }
-.elementor-templates-modal__header__item > i:not(:hover) {
+.aesthetic-templates-modal__header__item > i:not(:hover) {
 	color: #a4afb7;
 }
-.elementor-templates-modal__header__close--normal {
+.aesthetic-templates-modal__header__close--normal {
 	width: 47px;
 	border-left: 1px solid #e6e9ec;
 }
-.elementor-templates-modal__header__close--normal i {
+.aesthetic-templates-modal__header__close--normal i {
 	font-size: 18px;
 }
-.elementor-templates-modal__header__close--skip {
+.aesthetic-templates-modal__header__close--skip {
 	padding: 10px;
 	padding-left: 20px;
 	margin-right: 10px;
@@ -214,50 +214,50 @@
 	border-radius: 2px;
 	cursor: pointer;
 }
-.elementor-templates-modal__header__close--skip > i {
+.aesthetic-templates-modal__header__close--skip > i {
 	font-size: inherit;
 	padding-left: 10px;
 	margin-left: 15px;
 	border-left: 1px solid;
 }
-.elementor-templates-modal__header__close--skip > i:not(:hover) {
+.aesthetic-templates-modal__header__close--skip > i:not(:hover) {
 	color: #fff;
 }
 
-#elementor-icons-manager-modal .dialog-message {
+#aesthetic-icons-manager-modal .dialog-message {
 	padding: 0;
 	height: 700px;
 }
 
-#elementor-icons-manager-modal .dialog-content {
+#aesthetic-icons-manager-modal .dialog-content {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
-#elementor-icons-manager-modal .dialog-buttons-wrapper {
+#aesthetic-icons-manager-modal .dialog-buttons-wrapper {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
-#elementor-icons-manager__wrapper {
+#aesthetic-icons-manager__wrapper {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
 @media (max-width: 479px) {
-	#elementor-icons-manager__sidebar {
+	#aesthetic-icons-manager__sidebar {
 		display: none;
 	}
 }
 
-#elementor-icons-manager__tab-links {
+#aesthetic-icons-manager__tab-links {
 	margin-top: 30px;
 }
 
-#elementor-icons-manager__upload {
+#aesthetic-icons-manager__upload {
 	margin: 20px 45px;
 	padding-top: 35px;
 	border-top: 1px solid #e6e9ec;
@@ -272,17 +272,17 @@
 	justify-content: space-between;
 }
 @media (max-width: 1439px) {
-	#elementor-icons-manager__upload {
+	#aesthetic-icons-manager__upload {
 		margin: 20px 25px;
 	}
 }
-#elementor-icons-manager__upload__title {
+#aesthetic-icons-manager__upload__title {
 	color: #a4afb7;
 	font-size: 11px;
 	text-transform: uppercase;
 }
 
-#elementor-icons-manager__main {
+#aesthetic-icons-manager__main {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -294,37 +294,38 @@
 	width: 75%;
 }
 @media (max-width: 1439px) {
-	#elementor-icons-manager__main {
+	#aesthetic-icons-manager__main {
 		padding: 30px 50px 0;
 	}
 }
 @media (max-width: 479px) {
-	#elementor-icons-manager__main {
+	#aesthetic-icons-manager__main {
 		width: 100%;
 	}
 }
 
-#elementor-icons-manager__search {
+#aesthetic-icons-manager__search {
 	position: relative;
 }
-#elementor-icons-manager__search input {
+#aesthetic-icons-manager__search input {
+	width: calc( 100% - 30px);
 	padding: 8px 15px;
 	background-color: #fff;
 	border: none;
 }
-#elementor-icons-manager__search input::-webkit-input-placeholder {
+#aesthetic-icons-manager__search input::-webkit-input-placeholder {
 	font-style: italic;
 }
-#elementor-icons-manager__search input::-moz-placeholder {
+#aesthetic-icons-manager__search input::-moz-placeholder {
 	font-style: italic;
 }
-#elementor-icons-manager__search input::-ms-input-placeholder {
+#aesthetic-icons-manager__search input::-ms-input-placeholder {
 	font-style: italic;
 }
-#elementor-icons-manager__search input::placeholder {
+#aesthetic-icons-manager__search input::placeholder {
 	font-style: italic;
 }
-#elementor-icons-manager__search i {
+#aesthetic-icons-manager__search i {
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -333,52 +334,52 @@
 	right: 15px;
 }
 
-#elementor-icons-manager__tab__wrapper {
+#aesthetic-icons-manager__tab__wrapper {
 	overflow: auto;
 	margin: 25px -15px 0;
 	padding: 0 15px 15px;
 }
 
-#elementor-icons-manager__tab__title {
+#aesthetic-icons-manager__tab__title {
 	color: #556068;
 	font-size: 16px;
 	font-weight: 500;
 	text-align: left;
 }
 @media (max-width: 479px) {
-	#elementor-icons-manager__tab__title {
+	#aesthetic-icons-manager__tab__title {
 		display: none;
 	}
 }
 
-#elementor-icons-manager__tab__content {
+#aesthetic-icons-manager__tab__content {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	grid-gap: 20px;
 	margin: 20px 0;
 }
 @media (max-width: 1439px) {
-	#elementor-icons-manager__tab__content {
+	#aesthetic-icons-manager__tab__content {
 		grid-template-columns: repeat(6, 1fr);
 	}
 }
 @media (max-width: 1024px) {
-	#elementor-icons-manager__tab__content {
+	#aesthetic-icons-manager__tab__content {
 		grid-template-columns: repeat(5, 1fr);
 	}
 }
 @media (max-width: 767px) {
-	#elementor-icons-manager__tab__content {
+	#aesthetic-icons-manager__tab__content {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 @media (max-width: 479px) {
-	#elementor-icons-manager__tab__content {
+	#aesthetic-icons-manager__tab__content {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
-#elementor-icons-manager__promotion {
+#aesthetic-icons-manager__promotion {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -391,20 +392,20 @@
 	flex-direction: column;
 	padding-top: 70px;
 }
-#elementor-icons-manager__promotion__icon {
+#aesthetic-icons-manager__promotion__icon {
 	font-size: 60px;
 	color: #c2cbd2;
 }
-#elementor-icons-manager__promotion__text {
+#aesthetic-icons-manager__promotion__text {
 	width: 300px;
 	font-size: 16px;
 	padding-top: 25px;
 }
-#elementor-icons-manager__promotion__link {
+#aesthetic-icons-manager__promotion__link {
 	margin-top: 20px;
 }
 
-.elementor-icons-manager__tab-link {
+.aesthetic-icons-manager__tab-link {
 	padding: 15px 0 15px 45px;
 	font-size: 14px;
 	color: #6d7882;
@@ -412,31 +413,31 @@
 	cursor: pointer;
 	position: relative;
 }
-.elementor-icons-manager__tab-link i {
+.aesthetic-icons-manager__tab-link i {
 	font-size: 20px;
 	padding-right: 15px;
 	color: #a4afb7;
 }
 @media (max-width: 1439px) {
-	.elementor-icons-manager__tab-link {
+	.aesthetic-icons-manager__tab-link {
 		padding: 15px 15px 15px 25px;
 		font-size: 11px;
 	}
-	.elementor-icons-manager__tab-link i {
+	.aesthetic-icons-manager__tab-link i {
 		font-size: 15px;
 	}
 }
 @media (max-width: 1024px) {
-	.elementor-icons-manager__tab-link i {
+	.aesthetic-icons-manager__tab-link i {
 		display: none;
 	}
 }
-.elementor-icons-manager__tab-link.elementor-active {
+.aesthetic-icons-manager__tab-link.aesthetic-active {
 	background-color: #fff;
 	-webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.elementor-icons-manager__tab-link.elementor-active:after {
+.aesthetic-icons-manager__tab-link.aesthetic-active:after {
 	content: "";
 	position: absolute;
 	height: 100%;
@@ -445,11 +446,11 @@
 	left: 0;
 	background-color: #71d7f7;
 }
-.elementor-icons-manager__tab-link.elementor-active i {
+.aesthetic-icons-manager__tab-link.aesthetic-active i {
 	color: #71d7f7;
 }
 
-.elementor-icons-manager__tab__item {
+.aesthetic-icons-manager__tab__item {
 	position: relative;
 	height: 0;
 	padding-bottom: 100%;
@@ -464,15 +465,15 @@
 	transition: all 0.3s;
 	overflow: hidden;
 }
-.elementor-icons-manager__tab__item:hover {
+.aesthetic-icons-manager__tab__item:hover {
 	-webkit-box-shadow: 0 1px 14px rgba(0, 0, 0, 0.16);
 	box-shadow: 0 1px 14px rgba(0, 0, 0, 0.16);
 }
-.elementor-icons-manager__tab__item.elementor-selected {
+.aesthetic-icons-manager__tab__item.aesthetic-selected {
 	-webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05), 0 0 0 3px #71d7f7;
 	box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05), 0 0 0 3px #71d7f7;
 }
-.elementor-icons-manager__tab__item__content {
+.aesthetic-icons-manager__tab__item__content {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -492,12 +493,12 @@
 	transform: translate(-50%, -50%);
 	padding: 1px;
 }
-.elementor-icons-manager__tab__item__content i,
-.elementor-icons-manager__tab__item__icon {
+.aesthetic-icons-manager__tab__item__content i,
+.aesthetic-icons-manager__tab__item__icon {
 	font-size: 25px;
 	color: #6d7882;
 }
-.elementor-icons-manager__tab__item__name {
+.aesthetic-icons-manager__tab__item__name {
 	color: #c2cbd2;
 	font-size: 11px;
 	padding: 13px 20px 0;
@@ -508,7 +509,7 @@
 	overflow: hidden;
 }
 
-.elementor-templates-modal__sidebar {
+.aesthetic-templates-modal__sidebar {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     width: 25%;

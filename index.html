@@ -8,79 +8,55 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<div class="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-templates-modal elementskit-dynamic-content-modal" id="elementor-icons-manager-modal">
+	<div class="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox aesthetic-templates-modal elementskit-dynamic-content-modal" id="aesthetic-icons-manager-modal">
 		<div class="dialog-widget-content dialog-lightbox-widget-content">
 			<div class="dialog-header dialog-lightbox-header">
-				<div class="elementor-templates-modal__header">
-					<div class="elementor-templates-modal__header__logo-area">
-						<div class="elementor-templates-modal__header__logo">
-							<span class="elementor-templates-modal__header__logo__icon-wrapper">
+				<div class="aesthetic-templates-modal__header">
+					<div class="aesthetic-templates-modal__header__logo-area">
+						<div class="aesthetic-templates-modal__header__logo">
+							<span class="aesthetic-templates-modal__header__logo__icon-wrapper">
 							<i class="eicon-elementor"></i>
 							</span>
-							<span class="elementor-templates-modal__header__logo__title">Widget Area</span>
+							<span class="aesthetic-templates-modal__header__logo__title">Aesthetic Icon Picker</span>
 						</div>
 					</div>
-					<div class="elementor-templates-modal__header__items-area">
-						<div class="elementor-templates-modal__header__close elementor-templates-modal__header__close--normal elementor-templates-modal__header__item">
+					<div class="aesthetic-templates-modal__header__items-area">
+						<div class="aesthetic-templates-modal__header__close aesthetic-templates-modal__header__close--normal aesthetic-templates-modal__header__item">
 							<i class="eicon-close" aria-hidden="true" title="Close"></i>
-							<span class="elementor-screen-only">Close</span>
+							<span class="aesthetic-screen-only">Close</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="dialog-message dialog-lightbox-message">
 				<div class="dialog-content dialog-lightbox-content">
-					<div id="elementor-icons-manager__sidebar" class="elementor-templates-modal__sidebar">
-						<div id="elementor-icons-manager__tab-links">
-							<div class="elementor-icons-manager__tab-link elementor-active" data-library-id="all"><i class="eicon-filter"></i>All Icons</div>
-							<div class="elementor-icons-manager__tab-link" data-library-id="regular"><i class="fab fa-font-awesome-alt"></i>Font Awesome - Regular</div>
-							<div class="elementor-icons-manager__tab-link" data-library-id="solid"><i class="fab fa-font-awesome"></i>Font Awesome - Solid</div>
-							<div class="elementor-icons-manager__tab-link" data-library-id="brands"><i class="fab fa-font-awesome-flag"></i>Font Awesome - Brands</div>
-							<div class="elementor-icons-manager__tab-link" data-library-id="happy-icons"><i class="hm hm-happyaddons"></i>Happy Icons</div>
+					<div id="aesthetic-icons-manager__sidebar" class="aesthetic-templates-modal__sidebar">
+						<div id="aesthetic-icons-manager__tab-links">
+							<div class="aesthetic-icons-manager__tab-link aesthetic-active" data-library-id="all"><i class="eicon-filter"></i>All Icons</div>
+							<div class="aesthetic-icons-manager__tab-link" data-library-id="regular"><i class="fab fa-font-awesome-alt"></i>Font Awesome - Regular</div>
+							<div class="aesthetic-icons-manager__tab-link" data-library-id="solid"><i class="fab fa-font-awesome"></i>Font Awesome - Solid</div>
+							<div class="aesthetic-icons-manager__tab-link" data-library-id="brands"><i class="fab fa-font-awesome-flag"></i>Font Awesome - Brands</div>
+							<div class="aesthetic-icons-manager__tab-link" data-library-id="happy-icons"><i class="hm hm-happyaddons"></i>Happy Icons</div>
 						</div>
 					</div>
-					<div id="elementor-icons-manager__main" class="elementor-templates-modal__content">
-						<div id="elementor-icons-manager__search"><input name="" value="" placeholder="Filter by name..."><i class="eicon-search"></i></div>
-						<div id="elementor-icons-manager__tab__wrapper">
-							<input type="hidden" name="icon_value" id="icon_value" value="fas fa-star">
-							<input type="hidden" name="icon_type" id="icon_type" value="fa-solid">
-							<div id="elementor-icons-manager__tab__content">
-
-								<!-- <div class="elementor-icons-manager__tab__item" filter="square">
-									<div class="elementor-icons-manager__tab__item__content">
-										<i class="fas fa-square"></i>
-										<div class="elementor-icons-manager__tab__item__name" title="Square">Square</div>
-									</div>
-								</div> -->
-
+					<div id="aesthetic-icons-manager__main" class="aesthetic-templates-modal__content">
+						<div id="aesthetic-icons-manager__search"><input name="" value="" placeholder="Filter by name..."><i class="eicon-search"></i></div>
+						<div id="aesthetic-icons-manager__tab__wrapper">
+							<input type="hidden" name="icon_value" id="icon_value" value="">
+							<input type="hidden" name="icon_type" id="icon_type" value="">
+							<div id="aesthetic-icons-manager__tab__content">
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="dialog-loading dialog-lightbox-loading" style="display: block;">
-					<div id="elementor-template-library-loading">
-						<div class="elementor-loader-wrapper">
-							<div class="elementor-loader">
-								<div class="elementor-loader-boxes">
-									<div class="elementor-loader-box"></div>
-									<div class="elementor-loader-box"></div>
-									<div class="elementor-loader-box"></div>
-									<div class="elementor-loader-box"></div>
-								</div>
-							</div>
-							<div class="elementor-loading-title"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="dialog-buttons-wrapper dialog-lightbox-buttons-wrapper">
-				<button class="elementor-button elementor-button-success dialog-button dialog-insert_icon dialog-lightbox-insert_icon">Insert</button>
+				<button class="aesthetic-button aesthetic-button-success dialog-button dialog-insert_icon dialog-lightbox-insert_icon">Insert</button>
 			</div>
 		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<!-- <script src="./icons/brands.js"></script> -->
 	<script src="assets/icons/brands.js"></script>
 	<script src="assets/icons/regular.js"></script>
 	<script src="assets/icons/solid.js"></script>

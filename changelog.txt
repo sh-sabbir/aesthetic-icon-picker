@@ -1,0 +1,17 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+## [1.0.0] - 2021-01-20
+### Added
+- Changelog file
+- Ability to filter icon by icon pack.
+
+### Changed
+- CSS class name prefix
+- Made filter input full sized
+- Popup Title
+
+### Removed
+- Unwanted section from markup
