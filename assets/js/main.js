@@ -1,125 +1,187 @@
-(function ($) {
+
+(function (w){
 	"use strict";
 
-	jQuery(document).ready(function ($) {
 
-		// console.log(brands);
-		// console.log('hello');
-		var iconLibrary = {
-			'brands': brands,
-			'regular': regular,
-			'solid': solid,
-			// 'happy-icons' : happyIcons, // load font & css before on it
+	function debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
 		};
+	};
 
-		var iconMarkup = '';
+	var iconLibrary = {
+		'brands': brands,
+		'regular': regular,
+		'solid': solid,
+		// 'happy-icons' : happyIcons, // load font & css before on it
+	};
 
-		$.each(iconLibrary, function (iconPackKey, iconPack) {
+	//console.log(typeof iconLibrary);
 
-			// console.log( iconPack['icons'] );
+	var iconMarkup = '';
 
-			var prefix = brandKey(iconPackKey);
+	Object.entries(iconLibrary).forEach( function( iconPackKey, iconPack ) {
 
-			$.each(iconPack['icons'], function (key, icon) {
+			//console.log( iconPackKey[0], iconPack );
 
-				var cls = prefix + icon;
+			var prefix = brandKey(iconPackKey[0]);
 
-				iconMarkup += iconItem(iconPackKey, cls, icon);
-
-				// console.log( icon );
-
+			iconPackKey[1]['icons'].forEach( function( key, icon ) {
+				// console.log( key, icon );
+				var cls = prefix + key;
+				iconMarkup += iconItem(iconPackKey[0], cls, key);
 			});
-
-		});
-
-
-
-		// TODO: Push ALL icon in window load
-		$('#aesthetic-icons-manager__tab__content').append(iconMarkup);
-
-		function iconItem(brand, iconCls, filter) {
-			var $markup = '<div class="aesthetic-icons-manager__tab__item" data-library="' + brand + '" filter="' + filter + '"><div class="aesthetic-icons-manager__tab__item__content"><i class="' + iconCls + '"></i><div class="aesthetic-icons-manager__tab__item__name" title="' + filter + '">' + filter + '</div></div></div>';
-			return $markup;
-		}
-
-		function brandKey(key) {
-			switch (key) {
-				case 'brands':
-					return 'fab fa-';
-					break;
-				case 'solid':
-					return 'fas fa-';
-					break;
-				case 'regular':
-					return 'far fa-';
-					break;
-				case 'happy-icons':
-					return 'hm hm-';
-					break;
-				default:
-					return 'fab fa-';
-			}
-		}
-		// TODO: sidebar class
-		$('.aesthetic-icons-manager__tab-link').on('click', function () {
-			/* Handle Icon Pack Active State */
-			$(this).parent().find('.aesthetic-active').removeClass("aesthetic-active");
-			$(this).addClass("aesthetic-active");
-
-			/* Filter Icons by Pack */
-			var library = $(this).data('library-id');
-			var icons = $('#aesthetic-icons-manager__tab__content').children();
-
-			if (library != "all") {
-				icons.filter(function () {
-					$(this).toggle($(this).data('library') == library);
-				});
-			} else {
-				icons.filter(function () {
-					$(this).show();
-				});
-			}
-		});
-
-		// TODO: search input
-		$('#aesthetic-icons-manager__search input').on("keyup", function () {
-			var value = $(this).val().toLowerCase();
-			var icon = $('#aesthetic-icons-manager__tab__content').find('i');
-			//console.log( value );
-			icon.filter(function () {
-				$(this).closest('.aesthetic-icons-manager__tab__item').toggle($(this).attr('class').toLowerCase().indexOf(value) > -1);
-			});
-		});
-
-		/**
-		 * Script for icon option
-		 */
-		/* $('.wpci_icon_area').each(function () {
-			var wpci_icon_area = $(this);
-			var icon_input = wpci_icon_area.find('input.wpci_icon_cls_input');
-			var icon_filter = wpci_icon_area.find('input.filter');
-			var icon_library = wpci_icon_area.find('.customizer_icon_library');
-			var icon = icon_library.find('i');
-			//click on input show icon area
-			icon_input.on('click', function () {
-				icon_library.slideToggle("fast");
-			});
-			//type on input search icon item in icon area
-			icon_filter.on("keyup", function() {
-				var value = $(this).val().toLowerCase();
-				icon.filter(function() {
-					$(this).closest('li').toggle($(this).attr('class').toLowerCase().indexOf(value) > -1);
-				});
-			});
-			//click on icon hide icon area
-			icon.on('click', function () {
-				icon_input.val($(this).attr('class')).change();
-				setTimeout(function () {
-					icon_library.slideUp("fast");
-				}, 310)
-			});
-		}); */
 
 	});
 
-})(jQuery);
+	function iconItem(brand, iconCls, filter) {
+		var $markup = '<div class="aesthetic-icons-manager__tab__item" data-library="' + brand + ' all" data-filter="' + filter + '"><div class="aesthetic-icons-manager__tab__item__content"><i class="' + iconCls + '"></i><div class="aesthetic-icons-manager__tab__item__name" title="' + filter + '">' + filter + '</div></div></div>';
+		return $markup;
+	}
+
+	function brandKey(key) {
+		switch (key) {
+			case 'brands':
+				return 'fab fa-';
+				break;
+			case 'solid':
+				return 'fas fa-';
+				break;
+			case 'regular':
+				return 'far fa-';
+				break;
+			case 'happy-icons':
+				return 'hm hm-';
+				break;
+			default:
+				return 'fab fa-';
+		}
+	}
+
+	var wrapper = document.querySelector('#aesthetic-icons-manager__tab__content');
+	wrapper.innerHTML = iconMarkup;
+	//console.log(wrapper);
+
+	var searchInput = document.querySelector('#aesthetic-icons-manager__search input');
+	var icon = document.querySelectorAll('#aesthetic-icons-manager__tab__content i');
+	var iconWrap = document.querySelectorAll('.aesthetic-icons-manager__tab__item');
+	searchInput.addEventListener('keyup', debounce(searchFunc , 100) );
+	// searchInput.addEventListener('keyup', searchFunc );
+
+	function searchFunc(e){
+		// console.log(this.value.toLowerCase());
+
+		var searchText = this.value.toLowerCase();
+		filterFunc(iconWrap,searchText,'filter');
+
+	}
+
+	function filterFunc(filterItems,filterText,dataName){
+
+		Object.entries(filterItems).filter( function(value, index){
+			// console.log(value[1].dataset[dataName]);
+			if( -1 == value[1].dataset[dataName].indexOf(filterText) ){
+				value[1].setAttribute('style', 'display: none;');
+			}else{
+				value[1].removeAttribute('style');
+			}
+		});
+
+	}
+
+	var sideBarBtn = document.querySelectorAll('.aesthetic-icons-manager__tab-link');
+
+	sideBarBtn.forEach(function(item,key){
+		item.addEventListener('click', clickHandlerFunc );
+	});
+
+	function clickHandlerFunc(e){
+		// console.dir(e.currentTarget);
+		if( ! e.currentTarget.classList.contains('aesthetic-active') ){
+			sideBarBtn.forEach(function(item,key){
+				item.classList.remove('aesthetic-active');
+			});
+			e.currentTarget.classList.add('aesthetic-active')
+		}
+		filterFunc(iconWrap, e.currentTarget.dataset['libraryId'], 'library');
+	}
+
+	var aestheticModel = document.querySelector('#aesthetic-icons-manager-modal');
+
+	//Icon library open
+	document.querySelector('.select-icon').addEventListener('click', function(e) {
+		aestheticModel.classList.remove('aesthetic-templates-modal-close');
+		aestheticModel.classList.add('aesthetic-templates-modal-open');
+	});
+
+	//Icon library close by clicking close button
+	document.querySelector('.aesthetic-templates-modal__header__close--normal').addEventListener('click', function(e) {
+		aestheticModel.classList.add('aesthetic-templates-modal-close');
+		aestheticModel.classList.remove('aesthetic-templates-modal-open');
+	});
+
+	// document.querySelector('.aesthetic-icons-manager__tab__item').addEventListener('click', function(e) {
+	// 	iconWrap.forEach(function(item,key){
+	// 		item.classList.remove('aesthetic-selected');
+	// 	});
+	// 	e.currentTarget.classList.toggle('aesthetic-selected');
+	// });
+
+	// selected icon highlited by adding class
+	document.querySelectorAll('.aesthetic-icons-manager__tab__item').forEach(function(item,key){
+		item.addEventListener('click', function(e) {
+			iconWrap.forEach(function(item,key){
+				item.classList.remove('aesthetic-selected');
+			});
+			e.currentTarget.classList.toggle('aesthetic-selected');
+		});
+	});
+
+	//Insert button
+	document.querySelector('.aesthetic-insert-icon-button').addEventListener('click', function(e) {
+		var selected = document.querySelector('.aesthetic-selected');
+
+		if( null !== selected ){
+
+			var sellectedClass = selected.querySelector('i').classList.value;
+
+			document.querySelector('#icon_value').value = sellectedClass;
+
+			var wrap = document.querySelector('.select-icon');
+			wrap.querySelector('i').classList.value = sellectedClass;
+			// if( null == wrap.querySelector('i') ){
+
+			// 	var iTag = document.createElement('i');
+			// 	iTag.classList.value = sellectedClass;
+			// 	wrap.appendChild(iTag);
+			// }else{
+			// 	wrap.querySelector('i').classList.value = sellectedClass;
+			// }
+
+		}
+		aestheticModel.classList.add('aesthetic-templates-modal-close');
+		aestheticModel.classList.remove('aesthetic-templates-modal-open');
+	});
+
+	//Remove selected icon
+	document.querySelector('.icon-none').addEventListener('click', function(e) {
+		var selected = document.querySelector('.aesthetic-selected');
+		document.querySelector('.select-icon i').classList.value = 'fas fa-circle';
+
+		document.querySelector('#icon_value').value = '';
+	});
+
+
+
+
+
+})(window);

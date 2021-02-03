@@ -8,7 +8,16 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<div class="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox aesthetic-templates-modal elementskit-dynamic-content-modal" id="aesthetic-icons-manager-modal">
+	<div class="icon-picker-wrap">
+		<ul class="icon-picker">
+			<li class="icon-none" title="None"><i class="fas fa-ban"></i></li>
+			<li class="select-icon" title="Icon Library"><i class="fas fa-circle"></i></li>
+			<input type="hidden" name="icon_value" id="icon_value" value="">
+			<input type="hidden" name="icon_type" id="icon_type" value="">
+		</ul>
+	</div>
+
+	<div class="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox aesthetic-templates-modal aesthetic-templates-modal-close" id="aesthetic-icons-manager-modal">
 		<div class="dialog-widget-content dialog-lightbox-widget-content">
 			<div class="dialog-header dialog-lightbox-header">
 				<div class="aesthetic-templates-modal__header">
@@ -44,19 +53,18 @@
 						<div id="aesthetic-icons-manager__tab__wrapper">
 							<input type="hidden" name="icon_value" id="icon_value" value="">
 							<input type="hidden" name="icon_type" id="icon_type" value="">
-							<div id="aesthetic-icons-manager__tab__content">
-							</div>
+							<div id="aesthetic-icons-manager__tab__content"></div><!-- Icon Push hear  -->
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="dialog-buttons-wrapper dialog-lightbox-buttons-wrapper">
-				<button class="aesthetic-button aesthetic-button-success dialog-button dialog-insert_icon dialog-lightbox-insert_icon">Insert</button>
+				<button class="aesthetic-button aesthetic-insert-icon-button aesthetic-button-success dialog-button dialog-insert_icon dialog-lightbox-insert_icon">Insert</button>
 			</div>
 		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 	<script src="assets/icons/brands.js"></script>
 	<script src="assets/icons/regular.js"></script>
 	<script src="assets/icons/solid.js"></script>
