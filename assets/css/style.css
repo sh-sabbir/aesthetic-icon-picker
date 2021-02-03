@@ -13,19 +13,15 @@ button.select-icon {
 }
 
 .aesthetic-templates-modal-close{
+	opacity: 0;
+	visibility: hidden;
 	transition: all 0.4s ease-in-out;
-	transform: scale(0);
 }
 .aesthetic-templates-modal-open{
-	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
 	transition: all 0.4s ease-in-out;
 }
-/* .icon-picker-wrap i {
-    font-size: 68px;
-    display: block;
-    margin-top: 16px;
-    text-align: center;
-} */
 
 .icon-picker-wrap ul {
     list-style: none;
