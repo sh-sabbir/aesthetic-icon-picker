@@ -17,49 +17,42 @@
 		</ul>
 	</div>
 
-	<div class="atm dialog-type-lightbox atm-close" id="aim-modal">
-		<div class="dialog-widget-content">
-			<div class="dialog-header">
-				<div class="atm__header">
-					<div class="atm__header__logo-area">
-						<div class="atm__header__logo">
-							<span class="atm__header__logo__icon-wrapper">
-							<i class="eicon-elementor"></i>
-							</span>
-							<span class="atm__header__logo__title">Aesthetic Icon Picker</span>
-						</div>
+	<div class="aim-modal aim-close" id="aim-modal">
+		<div class="aim-modal--content">
+
+			<div class="aim-modal--header">
+
+					<div class="aim-modal--header-logo-area">
+						<span class="aim-modal--header-logo-title">Aesthetic Icon Picker</span>
 					</div>
-					<div class="atm__header__items-area">
-						<div class="atm__header__close atm__header__close--normal atm__header__item">
-							<i class="eicon-close" aria-hidden="true" title="Close"></i>
-							<span class="aesthetic-screen-only">Close</span>
-						</div>
+					<div class="aim-modal--header-close-btn">
+							<span class="aim-modal--header-close-btn-txt">Close</span>
 					</div>
-				</div>
+
 			</div>
-			<div class="dialog-message">
-				<div class="dialog-content">
-					<div id="aim__sidebar" class="atm__sidebar">
-						<div id="aim__tab-links">
-							<div class="aim__tab-link aesthetic-active" data-library-id="all"><i class="eicon-filter"></i>All Icons</div>
-							<div class="aim__tab-link" data-library-id="regular"><i class="fab fa-font-awesome-alt"></i>Font Awesome - Regular</div>
-							<div class="aim__tab-link" data-library-id="solid"><i class="fab fa-font-awesome"></i>Font Awesome - Solid</div>
-							<div class="aim__tab-link" data-library-id="brands"><i class="fab fa-font-awesome-flag"></i>Font Awesome - Brands</div>
-							<div class="aim__tab-link" data-library-id="happy-icons"><i class="hm hm-happyaddons"></i>Happy Icons</div>
+
+			<div class="aim-modal--body">
+					<div id="aim-modal--sidebar" class="aim-modal--sidebar">
+						<div class="aim-modal--sidebar-tabs">
+							<div class="aim-modal--sidebar-tab-item aesthetic-active" data-library-id="all"><i class="eicon-filter"></i>All Icons</div>
+							<div class="aim-modal--sidebar-tab-item" data-library-id="regular"><i class="fab fa-font-awesome-alt"></i>Font Awesome - Regular</div>
+							<div class="aim-modal--sidebar-tab-item" data-library-id="solid"><i class="fab fa-font-awesome"></i>Font Awesome - Solid</div>
+							<div class="aim-modal--sidebar-tab-item" data-library-id="brands"><i class="fab fa-font-awesome-flag"></i>Font Awesome - Brands</div>
+							<div class="aim-modal--sidebar-tab-item" data-library-id="happy-icons"><i class="hm hm-happyaddons"></i>Happy Icons</div>
 						</div>
 					</div>
-					<div id="aim__main" class="atm__content">
-						<div id="aim__search"><input name="" value="" placeholder="Filter by name..."><i class="eicon-search"></i></div>
-						<div id="aim__tab__wrapper">
-							<input type="hidden" name="icon_value" id="icon_value" value="">
-							<input type="hidden" name="icon_type" id="icon_type" value="">
-							<div id="aim__tab__content"></div><!-- Icon Push hear  -->
+
+					<div id="aim-modal--icon-preview-wrap" class="aim-modal--icon-preview-wrap">
+						<div class="aim-modal--icon-search"><input name="" value="" placeholder="Filter by name..."><i class="fas fa-search"></i></div>
+						<div class="aim-modal--icon-preview-inner">
+							<div id="aim-modal--icon-preview">
+								<!-- <div id="aim-modal--icon-preview"></div>Icon Push hear -->
+							</div>
 						</div>
 					</div>
-				</div>
 			</div>
-			<div class="dialog-buttons-wrapper">
-				<button class="aesthetic-button aesthetic-insert-icon-button aesthetic-button-success dialog-button dialog-insert_icon dialog-lightbox-insert_icon">Insert</button>
+			<div class="aim-modal--footer">
+				<button class="aim-insert-icon-button">Insert</button>
 			</div>
 		</div>
 	</div>

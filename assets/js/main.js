@@ -44,7 +44,7 @@
 	});
 
 	function iconItem(brand, iconCls, filter) {
-		var $markup = '<div class="aim__tab__item" data-library="' + brand + ' all" data-filter="' + filter + '"><div class="aim__tab__item__content"><i class="' + iconCls + '"></i><div class="aim__tab__item__name" title="' + filter + '">' + filter + '</div></div></div>';
+		var $markup = '<div class="aim-icon-item" data-library="' + brand + ' all" data-filter="' + filter + '"><div class="aim-icon-item-inner"><i class="' + iconCls + '"></i><div class="aim-icon-item-name" title="' + filter + '">' + filter + '</div></div></div>';
 		return $markup;
 	}
 
@@ -67,13 +67,13 @@
 		}
 	}
 
-	var wrapper = document.querySelector('#aim__tab__content');
+	var wrapper = document.querySelector('#aim-modal--icon-preview');
 	wrapper.innerHTML = iconMarkup;
 	//console.log(wrapper);
 
-	var searchInput = document.querySelector('#aim__search input');
-	var icon = document.querySelectorAll('#aim__tab__content i');
-	var iconWrap = document.querySelectorAll('.aim__tab__item');
+	var searchInput = document.querySelector('.aim-modal--icon-search input');
+	var icon = document.querySelectorAll('#aim-modal--icon-preview i');
+	var iconWrap = document.querySelectorAll('.aim-icon-item');
 	searchInput.addEventListener('keyup', debounce(searchFunc, 100));
 	// searchInput.addEventListener('keyup', searchFunc );
 
@@ -98,7 +98,7 @@
 
 	}
 
-	var sideBarBtn = document.querySelectorAll('.aim__tab-link');
+	var sideBarBtn = document.querySelectorAll('.aim-modal--sidebar-tab-item');
 
 	sideBarBtn.forEach(function (item, key) {
 		item.addEventListener('click', clickHandlerFunc);
@@ -119,17 +119,17 @@
 
 	//Icon library open
 	document.querySelector('.select-icon').addEventListener('click', function (e) {
-		aestheticModel.classList.remove('atm-close');
-		aestheticModel.classList.add('atm-open');
+		aestheticModel.classList.remove('aim-close');
+		aestheticModel.classList.add('aim-open');
 	});
 
 	//Icon library close by clicking close button
-	document.querySelector('.atm__header__close--normal').addEventListener('click', function (e) {
-		aestheticModel.classList.add('atm-close');
-		aestheticModel.classList.remove('atm-open');
+	document.querySelector('.aim-modal--header-close-btn').addEventListener('click', function (e) {
+		aestheticModel.classList.add('aim-close');
+		aestheticModel.classList.remove('aim-open');
 	});
 
-	// document.querySelector('.aim__tab__item').addEventListener('click', function(e) {
+	// document.querySelector('.aim-icon-item').addEventListener('click', function(e) {
 	// 	iconWrap.forEach(function(item,key){
 	// 		item.classList.remove('aesthetic-selected');
 	// 	});
@@ -137,7 +137,7 @@
 	// });
 
 	// selected icon highlited by adding class
-	document.querySelectorAll('.aim__tab__item').forEach(function (item, key) {
+	document.querySelectorAll('.aim-icon-item').forEach(function (item, key) {
 		item.addEventListener('click', function (e) {
 			iconWrap.forEach(function (item, key) {
 				item.classList.remove('aesthetic-selected');
@@ -147,7 +147,7 @@
 	});
 
 	//Insert button
-	document.querySelector('.aesthetic-insert-icon-button').addEventListener('click', function (e) {
+	document.querySelector('.aim-insert-icon-button').addEventListener('click', function (e) {
 		var selected = document.querySelector('.aesthetic-selected');
 
 		if (null !== selected) {
@@ -168,8 +168,8 @@
 			// }
 
 		}
-		aestheticModel.classList.add('atm-close');
-		aestheticModel.classList.remove('atm-open');
+		aestheticModel.classList.add('aim-close');
+		aestheticModel.classList.remove('aim-open');
 	});
 
 	//Remove selected icon
