@@ -1,7 +1,7 @@
 .icon-picker-wrap {
     margin: 0 auto;
-    width: 200px;
     margin-top: 10%;
+    text-align: center;
 }
 
 button.select-icon {
@@ -56,9 +56,11 @@ button.select-icon {
 	width: 100%;
 	bottom: 0;
     left: 0;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.6);
 	z-index: 9999;
 	user-select: none;
+	display: flex;
+    align-items: center;
 }
 
  .aim-modal .aim-modal--content {
@@ -77,7 +79,7 @@ button.select-icon {
 
 /* Header */
 .aim-modal .aim-modal--header {
-	padding: 20px 15px;
+	padding: 15px 15px;
     background-color: #fff;
     box-shadow: 0 0 8px rgb(0 0 0 / 10%);
     position: relative;
@@ -96,6 +98,13 @@ button.select-icon {
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+}
+
+.aim-modal--header-close-btn {
+	cursor: pointer;
+}
+.aim-modal--header-close-btn i {
+	font-size: 22px;
 }
 
 /* body */
@@ -129,6 +138,9 @@ button.select-icon {
 	text-align: left;
 	cursor: pointer;
 	position: relative;
+	display: flex;
+	align-items: center;
+	text-transform: capitalize;
 }
 .aim-modal--sidebar-tab-item i {
 	font-size: 20px;
@@ -264,6 +276,7 @@ button.select-icon {
 	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	text-transform: capitalize;
 }
 
 

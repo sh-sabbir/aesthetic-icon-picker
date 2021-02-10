@@ -8,60 +8,45 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<div class="icon-picker-wrap">
+
+
+	<div class="icon-picker-wrap" id="icon-picker-wrap">
 		<ul class="icon-picker">
 			<li class="icon-none" title="None"><i class="fas fa-ban"></i></li>
-			<li class="select-icon" title="Icon Library"><i class="fas fa-circle"></i></li>
+			<li id='select-icon' class="select-icon" title="Icon Library"><i class="fas fa-circle"></i></li>
 			<input type="hidden" name="icon_value" id="icon_value" value="">
-			<input type="hidden" name="icon_type" id="icon_type" value="">
 		</ul>
 	</div>
 
-	<div class="aim-modal aim-close" id="aim-modal">
-		<div class="aim-modal--content">
 
-			<div class="aim-modal--header">
-
-					<div class="aim-modal--header-logo-area">
-						<span class="aim-modal--header-logo-title">Aesthetic Icon Picker</span>
-					</div>
-					<div class="aim-modal--header-close-btn">
-							<span class="aim-modal--header-close-btn-txt">Close</span>
-					</div>
-
-			</div>
-
-			<div class="aim-modal--body">
-					<div id="aim-modal--sidebar" class="aim-modal--sidebar">
-						<div class="aim-modal--sidebar-tabs">
-							<div class="aim-modal--sidebar-tab-item aesthetic-active" data-library-id="all"><i class="fas fa-star-of-life"></i>All Icons</div>
-							<div class="aim-modal--sidebar-tab-item" data-library-id="regular"><i class="fab fa-font-awesome-alt"></i>Font Awesome - Regular</div>
-							<div class="aim-modal--sidebar-tab-item" data-library-id="solid"><i class="fab fa-font-awesome"></i>Font Awesome - Solid</div>
-							<div class="aim-modal--sidebar-tab-item" data-library-id="brands"><i class="fab fa-font-awesome-flag"></i>Font Awesome - Brands</div>
-							<div class="aim-modal--sidebar-tab-item" data-library-id="happy-icons"><i class="hm hm-happyaddons"></i>Happy Icons</div>
-						</div>
-					</div>
-
-					<div id="aim-modal--icon-preview-wrap" class="aim-modal--icon-preview-wrap">
-						<div class="aim-modal--icon-search"><input name="" value="" placeholder="Filter by name..."><i class="fas fa-search"></i></div>
-						<div class="aim-modal--icon-preview-inner">
-							<div id="aim-modal--icon-preview">
-								<!-- <div id="aim-modal--icon-preview"></div>Icon Push hear -->
-							</div>
-						</div>
-					</div>
-			</div>
-			<div class="aim-modal--footer">
-				<button class="aim-insert-icon-button">Insert</button>
-			</div>
-		</div>
-	</div>
 
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-	<script src="assets/icons/brands.js"></script>
-	<script src="assets/icons/regular.js"></script>
-	<script src="assets/icons/solid.js"></script>
-	<script src="assets/icons/happy-icons.js"></script>
-	<script src="assets/js/main.js"></script>
+	<!-- <script src="assets/icons/brands.js"></script> -->
+	<!-- <script src="assets/icons/regular.js"></script> -->
+	<!-- <script src="assets/icons/solid.js"></script> -->
+	<!-- <script src="assets/icons/happy-icons.js"></script> -->
+	<!-- <script src="assets/icons/font-awesome.js"></script> -->
+
+	<script src="assets/js/aesthetic-icon-picker.js"></script>
+	<script>
+
+		var newIcon = {
+			"material":{
+				"regular":{
+					"list-icon":"",
+					"icon-style":"mt-regular",
+					"icons":["some","some2"],
+				}
+			}
+		}
+
+
+		AestheticIconPicker({
+			'selector': '#icon-picker-wrap', // must be an ID
+			'onClick': '#select-icon',  // must be an ID
+			"iconLibrary": newIcon
+		});
+
+	</script>
 </body>
 </html>
