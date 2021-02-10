@@ -217,13 +217,9 @@ var AestheticIconPicker = function(option) {
 				item[1].removeAttribute('style');
 			}
 		});
-		console.log(filterIcon);
-		// console.log(iconItemPush(filterIcon));
+
+		// console.log(filterIcon);
 		iconItemPush(filterIcon);
-		// previewWrap.appendChild( iconItemPush(filterIcon));
-		// previewWrap.innerHTML = iconItemPush(filterIcon);
-
-
 
 	}
 
@@ -238,13 +234,19 @@ var AestheticIconPicker = function(option) {
 
 	function sidebarFilterFunc(filterItems, filterText ) {
 
-		Object.entries(filterItems).filter(function (item, index) {
+		filterIcon = Object.entries(filterItems).filter(function (item, index) {
 			if ( 'all' === filterText || filterText === item[1].dataset['libraryId'] ) {
+				return true;
 				item[1].removeAttribute('style');
 			} else {
+				return false;
 				item[1].setAttribute('style', 'display: none;');
 			}
 		});
+
+		console.log(filterIcon);
+		// console.log(iconItemPush(filterIcon));
+		iconItemPush(filterIcon);
 
 	}
 
