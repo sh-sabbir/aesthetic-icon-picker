@@ -244,7 +244,7 @@ var AestheticIconPicker = function(option) {
 			}
 		});
 
-		console.log(filterIcon);
+		// console.log(filterIcon);
 		// console.log(iconItemPush(filterIcon));
 		iconItemPush(filterIcon);
 
