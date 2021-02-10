@@ -33,7 +33,7 @@ var AestheticIconPicker = function(option) {
 		return;
 	}
 
-	Object.assign(defaultOpt, option);
+	Object.assign(defaultOpt, option);  // option merge with default option
 
 	// console.log(defaultOpt);
 
@@ -44,7 +44,7 @@ var AestheticIconPicker = function(option) {
 	// }
 
 	if( option.hasOwnProperty('iconLibrary') && typeof option.iconLibrary == 'object' ){
-		Object.assign(iconLibrary, option.iconLibrary);
+		Object.assign(iconLibrary, option.iconLibrary);  // new icon library merge with default icon library
 	}
 
 	// console.log(iconLibrary);
@@ -65,6 +65,7 @@ var AestheticIconPicker = function(option) {
 	];
 	var iconMarkup='',
 	iconWrap,
+	filterIcon,
 	sideBarBtn;
 
 	var aestheticWrap = '<div class="aim-modal aim-open" id="aim-modal"><div class="aim-modal--content"><div class="aim-modal--header"><div class="aim-modal--header-logo-area"><span class="aim-modal--header-logo-title">Aesthetic Icon Picker</span></div><div class="aim-modal--header-close-btn"><i class="fas fa-times" title="Close"></i></div></div><div class="aim-modal--body"><div id="aim-modal--sidebar" class="aim-modal--sidebar"><div class="aim-modal--sidebar-tabs"></div></div><div id="aim-modal--icon-preview-wrap" class="aim-modal--icon-preview-wrap"><div class="aim-modal--icon-search"><input name="" value="" placeholder="Filter by name..."><i class="fas fa-search"></i></div><div class="aim-modal--icon-preview-inner"><div id="aim-modal--icon-preview"></div></div></div></div><div class="aim-modal--footer"><button class="aim-insert-icon-button">Insert</button></div></div></div>';
@@ -83,16 +84,22 @@ var AestheticIconPicker = function(option) {
 	//set icon and sidebar list
 	setIconAndSidebarList(iconLibrary);
 
-
+	//sidebar list markup push
 	sidebarTabs.innerHTML = sideBarListMarkup(sideBarList);
 
+	//icon markup push
 	previewWrap.innerHTML = iconMarkup;
 
+	// get all icon wrapper dom element
 	iconWrap = previewWrap.querySelectorAll('.aim-icon-item');
+
+	//set event lisner to search input
 	searchInput.addEventListener('keyup', debounce(searchFunc, 100));
 
+	//get all sidebar list item wrapper dom element
 	sideBarBtn = sidebarTabs.querySelectorAll('.aim-modal--sidebar-tab-item');
 
+	//set click event lisner to sidebar list item
 	sideBarBtn.forEach(function (item, key) {
 		item.addEventListener('click', clickHandlerFunc);
 	});
@@ -102,11 +109,11 @@ var AestheticIconPicker = function(option) {
 	document.querySelector(defaultOpt.onClick).addEventListener('click', function (e) {
 
 		// console.log(aestheticDomEle);
-		// console.log(selector);
+		console.log(selector);
 
 
 		if( null == selector.querySelector('.aim-modal') ) {
-
+			//push aesthetic dom to selector
 			selector.appendChild( aestheticDomEle );
 
 		}else{
@@ -115,8 +122,10 @@ var AestheticIconPicker = function(option) {
 			aestheticDomEle.classList.add('aim-open');
 		}
 
+		console.log( aestheticDomEle.querySelector('.aim-modal--icon-search input') );
 
 
+		document.querySelector('.aim-open .aim-modal--icon-search input').focus();
 
 
 		//Icon library close by clicking close button
@@ -137,7 +146,7 @@ var AestheticIconPicker = function(option) {
 		});
 
 		//Insert button
-		document.querySelector('.aim-insert-icon-button').addEventListener('click', function (e) {
+		aestheticDomEle.querySelector('.aim-insert-icon-button').addEventListener('click', function (e) {
 			var selected = document.querySelector('.aesthetic-selected');
 
 			if (null !== selected) {
@@ -154,17 +163,19 @@ var AestheticIconPicker = function(option) {
 			aestheticDomEle.classList.remove('aim-open');
 		});
 
-		//Remove selected icon
-		document.querySelector('.icon-none').addEventListener('click', function (e) {
-			var selected = document.querySelector('.aesthetic-selected');
-			document.querySelector('.select-icon i').classList.value = 'fas fa-circle';
-
-			document.querySelector('#icon_value').value = '';
-		});
 
 
 
+	});
 
+
+
+	//Remove selected icon
+	document.querySelector('.icon-none').addEventListener('click', function (e) {
+		var selected = document.querySelector('.aesthetic-selected');
+		document.querySelector('.select-icon i').classList.value = 'fas fa-circle';
+
+		document.querySelector('#icon_value').value = '';
 	});
 
 
@@ -196,15 +207,33 @@ var AestheticIconPicker = function(option) {
 
 	function searchFilterFunc(filterItems, filterText, dataName) {
 
-		Object.entries(filterItems).filter(function (item, index) {
+		filterIcon = Object.entries(filterItems).filter(function (item, index) {
 			// console.log(item[1].dataset[dataName]);
 			if (-1 == item[1].dataset[dataName].indexOf(filterText)) {
+				return false;
 				item[1].setAttribute('style', 'display: none;');
 			} else {
+				return true;
 				item[1].removeAttribute('style');
 			}
 		});
+		console.log(filterIcon);
+		// console.log(iconItemPush(filterIcon));
+		iconItemPush(filterIcon);
+		// previewWrap.appendChild( iconItemPush(filterIcon));
+		// previewWrap.innerHTML = iconItemPush(filterIcon);
 
+
+
+	}
+
+	function iconItemPush(arrayList){
+		previewWrap.innerHTML = '';
+		// var markuplist = '';
+		arrayList.forEach(function (item, key) {
+			previewWrap.appendChild( item[1] );
+		});
+		// return markuplist;
 	}
 
 	function sidebarFilterFunc(filterItems, filterText ) {
@@ -228,9 +257,6 @@ var AestheticIconPicker = function(option) {
 			e.currentTarget.classList.add('aesthetic-active')
 		}
 		sidebarFilterFunc(iconWrap, e.currentTarget.dataset['libraryId']);
-
-
-
 	}
 
 
