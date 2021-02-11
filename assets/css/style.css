@@ -383,3 +383,25 @@ button.select-icon {
 		display: none;
 	}
 }
+
+/* for arrow animation */
+.icon-picker-wrap ul {
+    position: relative;
+}
+.aim-indicator {
+    font-size: 60px;
+    position: absolute;
+    left: 50%;
+	top: 0;
+	transform: translate(-50%, 0);
+	animation-name: aim-indicator;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes aim-indicator {
+	0%   {top: -100px}
+	50%  {top: -70px}
+	100% {top: -100px}
+}
