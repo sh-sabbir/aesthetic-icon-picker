@@ -1,1 +1,1 @@
-# aesthetic-icon-picker
+# Aesthetic Icon Picker
