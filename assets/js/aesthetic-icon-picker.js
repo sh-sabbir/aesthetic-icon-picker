@@ -322,7 +322,5 @@ var AestheticIconPicker = function(option) {
 
 	}
 
-
-
-
+	
 }
