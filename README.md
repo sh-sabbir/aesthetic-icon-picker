@@ -1,4 +1,4 @@
-# aesthetic-icon-picker
+# Aesthetic Icon Picker
 
 More documentation & optimization coming soon... :)
 
